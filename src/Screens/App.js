@@ -1,13 +1,19 @@
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 //import LoginScreen from './LoginScreen';
 import './../index.css'
- import Dashboard from './Dashboard';
+import Dashboard from './Dashboard';
+import { Routes, Route } from 'react-router-dom';
+import LoginScreen from './LoginScreen';
+import Error404 from './Error404';
+
+
 function App() {
   return (
-    <div className="App">
-      {/* <LoginScreen /> */}
-     <Dashboard />
-    </div>
+    <Routes>
+      <Route exact path="/" element={<LoginScreen />} />
+      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="*" element={<Error404 />} />
+    </Routes>
   );
 }
 
