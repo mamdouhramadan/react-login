@@ -3,13 +3,20 @@ import './header.css';
 import Button from './../../Button';
 import { MenuIcon } from '../../../API/StaticData';
 import { MDBTooltip } from 'mdb-react-ui-kit';
+import { connect } from 'react-redux';
+import { useNavigate } from 'react-router';
+import { logout_user } from './../../../Redux/Actions/index';
 
-export default function Header() {
+const Header = (props) => {
     const [toggled, setToggled] = useState(false)
     const toggleSidebar = () => {
         setToggled(!toggled)
     }
-
+    const goTo = useNavigate();
+    const logout = () => {
+        props.logout_user()
+        goTo('/')
+    }
     return (
         <div className={`dashbaord-header header ${toggled ? 'sidebar-toggled' : ''}`}>
 
@@ -45,7 +52,7 @@ export default function Header() {
                     }
 
                     <li className="ms-3 menu-item">
-                        <Button className="log-out" size="sm" color="danger" alt="">
+                        <Button onClick={() => logout()} className="log-out" size="sm" color="danger" alt="">
                             <i className="fa fa-sign-out-alt"></i>
                             <span className="ms-2">Logout</span>
                         </Button>
@@ -56,3 +63,5 @@ export default function Header() {
         </div >
     )
 }
+
+export default connect(state => { return { user: state } }, { logout_user })(Header)

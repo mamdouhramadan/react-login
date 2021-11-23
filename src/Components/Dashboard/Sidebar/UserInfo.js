@@ -1,6 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-export default function UserInfo() {
+const UserInfo = ({user}) => {
+    console.log('dashboard props : ',user);
+
     return (
         <div className="user-info text-center">
             <div className="user-avatar">
@@ -8,7 +11,10 @@ export default function UserInfo() {
             </div>
 
             <h6 className="user-name mt-3">Welcome Back!!</h6>
-            <p className="user-name">mamdouh@gmail.com</p>
+            <p className="user-name">{user?.email || 'You are Not Authorized'}</p>
         </div>
     )
 }
+
+
+export default connect(state => { return { user: state } }, null)(UserInfo)

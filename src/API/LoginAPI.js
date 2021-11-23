@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const LoginAPI = async (data, setErrors, navigate, setLoading) => {
+const LoginAPI = async (data, setErrors, navigate, setLoading, login_user) => {
 
     setLoading(true)
     var myHeaders = new Headers();
@@ -17,7 +17,8 @@ const LoginAPI = async (data, setErrors, navigate, setLoading) => {
     axios(config)
         .then(result => {
             console.log(result);
-            setLoading(false)
+            setLoading(false);
+            login_user(data.email);
             navigate('/dashboard')
         })
         .catch(error => {

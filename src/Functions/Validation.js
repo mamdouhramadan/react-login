@@ -34,7 +34,6 @@ const Validation = (data, setErrors) => {
     }
     validation = true;
     setErrors('')
-    console.log(validation);
     return validation
 
 }

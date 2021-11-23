@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../../Components/Dashboard/Header'
 import Sidebar from '../../Components/Dashboard/Sidebar'
 import DashboardScreens from './DashboardScreens'
 import './dashboard.css';
+import { connect } from 'react-redux';
+import { useNavigate } from 'react-router';
 
-export default function Dashboard() {
+const Dashboard = ({ user }) => {
+    const goTo = useNavigate()
+
+    useEffect(() => {
+
+        user === '' && goTo('/');
+
+    }, [user, goTo])
+
+
+
     return (
-        <div>
-
+        <div id="page">
             <Header />
             <div className="main">
                 <Sidebar />
@@ -16,3 +27,5 @@ export default function Dashboard() {
         </div>
     )
 }
+
+export default connect(state => { return { user: state } }, null)(Dashboard)

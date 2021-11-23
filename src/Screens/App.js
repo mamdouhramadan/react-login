@@ -1,5 +1,4 @@
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-//import LoginScreen from './LoginScreen';
 import './../index.css'
 import Dashboard from './Dashboard';
 import { Routes, Route } from 'react-router-dom';
@@ -14,6 +13,7 @@ function App() {
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="*" element={<Error404 />} />
     </Routes>
+
   );
 }
 
