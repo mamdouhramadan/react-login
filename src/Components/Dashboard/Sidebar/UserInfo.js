@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-const UserInfo = ({user}) => {
-    console.log('dashboard props : ',user);
+const UserInfo = ({ user }) => {
+    console.log('dashboard props : ', user);
 
     return (
         <div className="user-info text-center">
@@ -10,7 +10,7 @@ const UserInfo = ({user}) => {
                 <img src={require('./../../../Images/user-avatar.png').default} alt="user avatar" />
             </div>
 
-            <h6 className="user-name mt-3">Welcome Back!!</h6>
+            <h6 className="welcome-msg mt-3">Welcome Back!!</h6>
             <p className="user-name">{user?.email || 'You are Not Authorized'}</p>
         </div>
     )

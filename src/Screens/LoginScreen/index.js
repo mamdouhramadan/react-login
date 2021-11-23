@@ -19,7 +19,7 @@ const LoginScreen = ({ user, login_user }) => {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-
+        document.title = "Login Page"
         user.is_login && goTo('./dashboard');
 
 
@@ -39,32 +39,34 @@ const LoginScreen = ({ user, login_user }) => {
 
     return (
         <div className="container">
-            <div className="row justify-content-center">
-                <form onSubmit={HandleLoginForm} className="form my-5 p-5 border bg-white login-form">
-                    <img className="form-logo" src={require('./../../Images/logo-2.png').default} alt="img" />
-                    <Input
-                        autoComplete="on"
-                        placeholder="Enter Email Address"
-                        value={email}
-                        onChange={(e) => { setEmail(e.target.value) }}
-                    />
+            <div className="row justify-content-center login-container">
+                <Fade bottom>
+                    <form onSubmit={HandleLoginForm} className="form my-5 p-5 border bg-white login-form">
+                        <img className="form-logo" src={require('./../../Images/logo-2.png').default} alt="img" />
+                        <Input
+                            autoComplete="on"
+                            placeholder="Enter Email Address"
+                            value={email}
+                            onChange={(e) => { setEmail(e.target.value) }}
+                        />
 
-                    <Input
-                        type="password"
-                        placeholder="Enter  Password"
-                        value={password}
-                        onChange={(e) => { setPassword(e.target.value) }}
-                    />
-                    {errors &&
-                        <Fade bottom >
-                            <p className='alert alert-danger p-2 py-3 text-center text-capitalize'>{errors}</p>
-                        </Fade>
-                    }
-                    <div className="row align-items-center">
-                        <a href="#!" className="w-50 text-capitalize">lost Password? </a>
-                        <Button disabled={loading} className="w-50" type="submit" color="primary">Login</Button>
-                    </div>
-                </form>
+                        <Input
+                            type="password"
+                            placeholder="Enter  Password"
+                            value={password}
+                            onChange={(e) => { setPassword(e.target.value) }}
+                        />
+                        {errors &&
+                            <Fade bottom >
+                                <p className='alert alert-danger p-2 py-3 text-center text-capitalize'>{errors}</p>
+                            </Fade>
+                        }
+                        <div className="row align-items-center links-group">
+                            <a href="#!" className="w-50 text-capitalize">lost Password? </a>
+                            <Button disabled={loading} className="w-50" type="submit" color="primary">Login</Button>
+                        </div>
+                    </form>
+                </Fade>
             </div>
         </div>
     )

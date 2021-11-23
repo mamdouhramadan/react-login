@@ -10,7 +10,7 @@ const Dashboard = ({ user }) => {
     const goTo = useNavigate()
 
     useEffect(() => {
-
+        document.title = "Dashboard Page"
         user === '' && goTo('/');
 
     }, [user, goTo])
