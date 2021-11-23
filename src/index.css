@@ -1,6 +1,18 @@
+@import url(./Constants/constant.css);
+/* Global Style */
+
 body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   background-color: #f1f1f1 !important;
   overflow-x: hidden;
   width: 100%;
+}
+
+.btn {
+  box-shadow: 0 0px 2px 0 rgb(0, 0, 0, 0.2) !important;
+}
+
+
+.btn-primary {
+  background-color: var(--themeColor) !important;
 }

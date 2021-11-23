@@ -9,16 +9,16 @@ export default function HomeScreen() {
         <div className="container">
             <div className="row">
                 <Fade>
-                    <div className="col-md-6 col-12">
+                    <div className="col-lg-6 col-12">
                        <WelcomePanel email="mamdouh@gmail.com" />
                     </div>
 
-                    <div className="col-md-6 col-12">
+                    <div className="col-lg-6 col-12">
                         <Fade right cascade>
                             <div className="row">
                                 {
                                     Statictics.map((item, index) =>
-                                        <div key={index} className="col-6  mb-4">
+                                        <div key={index} className="col-6 col-xs-12 mb-4">
                                             <div className="text-center">
                                                 <StatictsCard title={item.title} icon={item.icon} subTitle={item.subTitle} />
                                             </div>

@@ -6,11 +6,11 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './Screens/App';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <BrowserRouter>
       <App />
     </BrowserRouter> 
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 );
 

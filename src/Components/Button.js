@@ -1,8 +1,15 @@
 import { MDBBtn } from 'mdb-react-ui-kit'
 import React from 'react'
 
-export default function Button({ size, color, children, onClick, ...rest }) {
+export default function Button({ disabled, size, color, children, onClick, ...rest }) {
     return (
-        <MDBBtn onClick={onClick} size={size || 'lg'} color={color || 'success'} {...rest}>{children}</MDBBtn>
+        <MDBBtn disabled={disabled} onClick={onClick} size={size || 'lg'} color={color || 'success'} {...rest}>
+            {disabled &&
+                <span className="spinner-border spinner-border-sm text-white" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </span>
+            }
+            <span> {disabled || children}</span>
+        </MDBBtn>
     )
 }
