@@ -1,8 +1,6 @@
 # React Login
 #### By MAmdouh Ramadan
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://mamdouhramadan.github.io/react-login/)
-
 **Simple React js Login Sysyem ., You can try to login using following data :**
 
 ```sh
