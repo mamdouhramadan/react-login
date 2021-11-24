@@ -2,6 +2,9 @@ export const Constants = {
     Regex: {
         email: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     },
+    API:{
+        Login : 'https://reqres.in/api/login'
+    },
     ReuxActions: {
         Login_User: 'Login_User',
         Logout_User: 'Logout_User',

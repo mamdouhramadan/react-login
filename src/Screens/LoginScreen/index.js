@@ -19,20 +19,26 @@ const LoginScreen = ({ user, login_user }) => {
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
-        document.title = "Login Page"
+        // Page Title (in browser tab) 
+        document.title = "Login Page";
+        // Check User State(is_login) ,
+        // if Login redirect to Dashboard 
         user.is_login && goTo('./dashboard');
-
 
     }, [user, goTo])
 
     const HandleLoginForm = async (e) => {
 
+        // Prevent Form Action (Refresh Page)
         e.preventDefault();
 
+        // Save Email , Password in Object
         const data = { email, password };
 
+        // Check If Form is Valid (Based on Validation Function) 
         const isValid = Validation(data, setErrors);
 
+        // If form is valid , Run Login Function
         isValid && await LoginAuth(data, setErrors, goTo, setLoading, login_user)
 
     }

@@ -64,4 +64,4 @@ const Header = (props) => {
     )
 }
 
-export default connect(state => { return { user: state } }, { logout_user })(Header)
+export default connect(null, { logout_user })(Header)

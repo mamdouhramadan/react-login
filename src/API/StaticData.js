@@ -7,28 +7,23 @@ export const DashboardLinks = [
     },
     {
         title: 'Staticts',
-        link: '/',
+        link: '/statictics',
         icon: 'chart-area',
         active: false
     },
     {
         title: 'Reports',
-        link: '/',
+        link: '/report',
         icon: 'chart-pie',
         active: false
     },
     {
         title: 'Settings',
-        link: '/',
+        link: '/settings',
         icon: 'cog',
         active: false
     },
-    {
-        title: 'Logout',
-        link: '/',
-        icon: 'power-off',
-        active: false
-    },
+    
 ];
 
 export const Statictics = [
